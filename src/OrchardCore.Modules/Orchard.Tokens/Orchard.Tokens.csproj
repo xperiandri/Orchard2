@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="Handlebars.Net" Version="1.8.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0-preview1-24362" />
   </ItemGroup>
 
 </Project>

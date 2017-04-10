@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Http;
@@ -45,6 +45,7 @@ namespace Microsoft.AspNetCore.Mvc.Modules
             builder.AddAuthorization();
             builder.AddViews();
             builder.AddViewLocalization();
+            builder.AddRazorPages();
 
             AddModularFrameworkParts(applicationServices, builder.PartManager);
 
