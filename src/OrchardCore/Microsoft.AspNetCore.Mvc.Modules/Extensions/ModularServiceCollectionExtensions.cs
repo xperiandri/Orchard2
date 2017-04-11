@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Mvc.Razor.Internal;
 using Microsoft.AspNetCore.Mvc.Razor.TagHelpers;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
-using Microsoft.AspNetCore.Razor.Runtime.TagHelpers;
 using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -102,8 +101,6 @@ namespace Microsoft.AspNetCore.Mvc.Modules
 
             services.TryAddEnumerable(
                 ServiceDescriptor.Transient<IApplicationModelProvider, ModularApplicationModelProvider>());
-            services.Replace(
-                ServiceDescriptor.Transient<ITagHelperTypeResolver, FeatureTagHelperTypeResolver>());
         }
     }
 }

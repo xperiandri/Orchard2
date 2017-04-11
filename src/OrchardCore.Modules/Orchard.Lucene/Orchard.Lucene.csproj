@@ -22,7 +22,7 @@
     <PackageReference Include="Lucene.Net.Core" Version="4.8.0-alpha" />
     <PackageReference Include="Lucene.Net.Analysis.Common" Version="4.8.0-alpha" />
     <PackageReference Include="Lucene.Net.QueryParser" Version="4.8.0-alpha" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0-preview1-24362" />
   </ItemGroup>
 
 </Project>
