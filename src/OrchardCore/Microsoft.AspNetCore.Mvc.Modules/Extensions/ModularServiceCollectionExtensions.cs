@@ -55,7 +55,7 @@ namespace Microsoft.AspNetCore.Mvc.Modules
             builder.Services.Configure<RazorPagesOptions>(options =>
             {
                 options.RootDirectory = "/Packages";
-             });
+            });
 
             // Use a custom ICompilerCacheProvider so all tenant reuse the same ICompilerCache instance
             builder.Services.Replace(new ServiceDescriptor(typeof(ICompilerCacheProvider), typeof(SharedCompilerCacheProvider), ServiceLifetime.Singleton));
