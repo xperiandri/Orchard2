@@ -1,9 +1,14 @@
 ﻿@page
 
-@{ 
-    Layout = "_Layout";
+@functions
+{
+    public IActionResult OnGet()
+    {
+        Layout = "_Layout";
+        return View();
+    }
 }
 
-<li><a asp-route-area="Orchard.Users" asp-controller="Account" asp-action="Login">@T["Log in"]</a></li>
+<div><a asp-route-area="Orchard.Users" asp-controller="Account" asp-action="Login">@T["Log in"]</a></div>
 
 This is a THEMED RazorPage coming from Orchard.Demo! It's @DateTime.Now on the server
