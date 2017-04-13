@@ -39,11 +39,6 @@ namespace Orchard.DisplayManagement
                 options.Filters.Add(typeof(ModelBinderAccessorFilter));
             });
 
-            services.Configure<RazorViewEngineOptions>(options =>
-            {
-                options.FileProviders.Add(new ThemingFileProvider());
-            });
-
             services.AddScoped<IViewsFeatureAlteration, ThemingViewsFeatureAlteration>();
             services.AddScoped<IUpdateModelAccessor, LocalModelBinderAccessor>();
             services.AddScoped<IViewLocationExpanderProvider, ThemeAwareViewLocationExpanderProvider>();
