@@ -51,6 +51,11 @@ namespace Orchard.DisplayManagement.LocationExpander
 
             if (themeManager != null)
             {
+                if (context.AreaName == null)
+                {
+                    return Enumerable.Empty<string>();
+                }
+
                 var currentTheme = themeManager.GetThemeAsync().GetAwaiter().GetResult();
 
                 if (currentTheme == null)
@@ -70,7 +75,7 @@ namespace Orchard.DisplayManagement.LocationExpander
                     var themeViewsPath = Path.Combine(
                         Path.DirectorySeparatorChar + theme.Extension.SubPath,
                         "Views",
-                        context.AreaName != null && context.AreaName != theme.Id ? context.AreaName : string.Empty);
+                        context.AreaName != theme.Id ? context.AreaName : string.Empty);
 
                     result.Add(Path.Combine(themeViewsPath, "{1}", "{0}.cshtml"));
                     result.Add(Path.Combine(themeViewsPath, "Shared", "{0}.cshtml"));

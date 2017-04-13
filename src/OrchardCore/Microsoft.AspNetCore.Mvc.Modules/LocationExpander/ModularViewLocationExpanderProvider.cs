@@ -25,6 +25,11 @@ namespace Microsoft.AspNetCore.Mvc.Modules.LocationExpander
         public virtual IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context,
                                                                IEnumerable<string> viewLocations)
         {
+            if (context.AreaName == null)
+            {
+                return viewLocations;
+            }
+
             // Get Extension, and then add in the relevant views.
             var extension = _extensionManager.GetExtension(context.AreaName);
 
