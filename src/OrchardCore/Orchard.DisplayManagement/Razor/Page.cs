@@ -193,7 +193,7 @@ namespace Orchard.DisplayManagement.Razor
         /// </summary>
         /// <param name="name">The name of the zone to render.</param>
         /// <param name="required">Whether the zone is required or not.</param>
-        /*public new Task<IHtmlContent> RenderSectionAsync(string name, bool required)
+        public Task<IHtmlContent> RenderSectionAsync(string name, bool required)
         {
             if (name == null)
             {
@@ -208,7 +208,7 @@ namespace Orchard.DisplayManagement.Razor
             }
 
             return DisplayAsync(zone);
-        }*/
+        }
 
         public object OrDefault(object text, object other)
         {
