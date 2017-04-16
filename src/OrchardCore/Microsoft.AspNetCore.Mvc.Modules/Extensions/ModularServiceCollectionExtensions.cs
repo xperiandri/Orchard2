@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Modules;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
-using Microsoft.AspNetCore.Mvc.Internal;
 using Microsoft.AspNetCore.Mvc.Modules.LocationExpander;
 using Microsoft.AspNetCore.Mvc.Modules.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Razor.Internal;
@@ -19,7 +18,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Microsoft.AspNetCore.Mvc.Modules
 {
-	public static class ModularServiceCollectionExtensions
+    public static class ModularServiceCollectionExtensions
     {
         public static ModularServiceCollection AddMvcModules(this ModularServiceCollection moduleServices, 
             IServiceProvider applicationServices)
