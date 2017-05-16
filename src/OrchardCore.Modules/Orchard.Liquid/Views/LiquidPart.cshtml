@@ -3,6 +3,7 @@
 @model Orchard.Liquid.ViewModels.LiquidPartViewModel
 @inject ILiquidManager LiquidManager
 @inject Orchard.ContentManagement.IContentManager ContentManager
+@inject IServiceProvider ServiceProvider
 @inject YesSql.ISession Session
 @inject Orchard.Queries.IQueryManager QueryManager
 
@@ -16,7 +17,7 @@
         User = User,
         Content = new ContentQueryDrop(ContentManager, Session),
         Queries = new QueriesDrop(QueryManager),
-
+        ServiceProvider = ServiceProvider,
         Url = new UrlDrop(Url)
     };
 

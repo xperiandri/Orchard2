@@ -7,26 +7,26 @@ namespace Orchard.Liquid.Drops
 {
     public class ContentItemDrop : Drop
     {
-        private ContentItem _contentItem;
-
         public ContentItemDrop(ContentItem contentItem)
         {
-            _contentItem = contentItem;
+            ContentItem = contentItem;
         }
 
-        public int Id => _contentItem.Id;
-        public string ContentItemId => _contentItem.ContentItemId;
-        public string ContentItemVersionId => _contentItem.ContentItemVersionId;
-        public int Number => _contentItem.Number;
-        public string Owner => _contentItem.Owner;
-        public string Author => _contentItem.Author;
-        public bool Published => _contentItem.Published;
-        public bool Latest => _contentItem.Latest;
-        public string ContentType => _contentItem.ContentType;
-        public DateTime? CreatedUtc => _contentItem.CreatedUtc;
-        public DateTime? ModifiedUtc => _contentItem.ModifiedUtc;
-        public DateTime? PublishedUtc => _contentItem.PublishedUtc;
-        public JTokenDrop Content => new JTokenDrop((JToken)_contentItem.Content);
+        public ContentItem ContentItem { get; }
+
+        public int Id => ContentItem.Id;
+        public string ContentItemId => ContentItem.ContentItemId;
+        public string ContentItemVersionId => ContentItem.ContentItemVersionId;
+        public int Number => ContentItem.Number;
+        public string Owner => ContentItem.Owner;
+        public string Author => ContentItem.Author;
+        public bool Published => ContentItem.Published;
+        public bool Latest => ContentItem.Latest;
+        public string ContentType => ContentItem.ContentType;
+        public DateTime? CreatedUtc => ContentItem.CreatedUtc;
+        public DateTime? ModifiedUtc => ContentItem.ModifiedUtc;
+        public DateTime? PublishedUtc => ContentItem.PublishedUtc;
+        public JTokenDrop Content => new JTokenDrop((JToken)ContentItem.Content);
 
     }
 }

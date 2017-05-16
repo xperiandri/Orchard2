@@ -1,22 +1,25 @@
 using System.Linq;
+using System.Net;
 using System.Security.Principal;
 using DotLiquid;
 using DotLiquid.NamingConventions;
+using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.AspNetCore.Modules;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json.Linq;
 using Orchard.ContentManagement;
 using Orchard.ContentManagement.Display.ContentDisplay;
 using Orchard.ContentManagement.Handlers;
 using Orchard.Data.Migration;
 using Orchard.Indexing;
 using Orchard.Liquid.Drivers;
+using Orchard.Liquid.Drops;
+using Orchard.Liquid.Filters;
 using Orchard.Liquid.Handlers;
 using Orchard.Liquid.Indexing;
 using Orchard.Liquid.Model;
-using Newtonsoft.Json.Linq;
-using Orchard.Liquid.Drops;
 
 namespace Orchard.Liquid
 {
@@ -76,6 +79,11 @@ namespace Orchard.Liquid
             DotLiquid.Liquid.UseRubyDateFormat = false;
 
             Template.NamingConvention = new CSharpNamingConvention();
+            Template.RegisterFilter(typeof(MetadataFilters));
+            
+            // Html encoding support
+            Template.RegisterValueTypeTransformer(typeof(string), m => WebUtility.HtmlEncode((string)m));
+            Template.RegisterValueTypeTransformer(typeof(IHtmlContent), m => m.ToString());
         }
     }
 }
