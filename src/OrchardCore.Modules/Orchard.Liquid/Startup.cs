@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using System.Security.Principal;
 using DotLiquid;
 using DotLiquid.NamingConventions;
@@ -36,7 +36,9 @@ namespace Orchard.Liquid
             Template.RegisterSafeType(typeof(IContent), new string[] { nameof(IContent.ContentItem) });
             Template.RegisterSafeType(typeof(ContentItem), o => new ContentItemDrop((ContentItem)o));
 
+            Template.RegisterSafeType(typeof(JToken), o => new JTokenDrop((JToken)o));
             Template.RegisterSafeType(typeof(JObject), o => new JTokenDrop((JToken)o));
+            Template.RegisterSafeType(typeof(JArray), o => new JArrayDrop((JArray)o));
 
             Template.RegisterSafeType(typeof(ContentElement), new string[] {
                 nameof(ContentElement.Content),

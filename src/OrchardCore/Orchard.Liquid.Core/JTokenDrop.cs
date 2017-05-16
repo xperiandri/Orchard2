@@ -1,4 +1,4 @@
-﻿using DotLiquid;
+using DotLiquid;
 using Newtonsoft.Json.Linq;
 
 namespace Orchard.Liquid
@@ -29,9 +29,14 @@ namespace Orchard.Liquid
                 return null;
             }
 
-            if (value is JObject || value is JArray)
+            if (value is JObject)
             {
                 return new JTokenDrop(value);
+            }
+
+            if (value is JArray)
+            {
+                return new JArrayDrop((JArray)value);
             }
 
             if (value is JValue)

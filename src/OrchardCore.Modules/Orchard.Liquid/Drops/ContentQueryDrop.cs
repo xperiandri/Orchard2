@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using DotLiquid;
 using Orchard.ContentManagement;
@@ -7,12 +7,12 @@ using YesSql;
 
 namespace Orchard.Liquid.Drops
 {
-    public class QueryDrop : Drop, IIndexable
+    public class ContentQueryDrop : Drop, IIndexable
     {
         private readonly IContentManager _contentManager;
         private readonly ISession _session;
 
-        public QueryDrop(IContentManager contentManager, ISession session)
+        public ContentQueryDrop(IContentManager contentManager, ISession session)
         {
             _contentManager = contentManager;
             _session = session;
@@ -40,9 +40,9 @@ namespace Orchard.Liquid.Drops
 
     public class ContentTypeDrop : Drop, IIndexable
     {
-        private QueryDrop _query;
+        private ContentQueryDrop _query;
 
-        public ContentTypeDrop(QueryDrop query)
+        public ContentTypeDrop(ContentQueryDrop query)
         {
             _query = query;
         }
@@ -64,9 +64,9 @@ namespace Orchard.Liquid.Drops
 
     public class OrderByDrop : Drop, IIndexable
     {
-        private QueryDrop _query;
+        private ContentQueryDrop _query;
 
-        public OrderByDrop(QueryDrop query)
+        public OrderByDrop(ContentQueryDrop query)
         {
             _query = query;
         }
@@ -95,9 +95,9 @@ namespace Orchard.Liquid.Drops
 
     public class OrderByDescendingDrop : Drop, IIndexable
     {
-        private QueryDrop _query;
+        private ContentQueryDrop _query;
 
-        public OrderByDescendingDrop(QueryDrop query)
+        public OrderByDescendingDrop(ContentQueryDrop query)
         {
             _query = query;
         }
@@ -126,9 +126,9 @@ namespace Orchard.Liquid.Drops
 
     public class WhereDrop : Drop, IIndexable
     {
-        private QueryDrop _query;
+        private ContentQueryDrop _query;
 
-        public WhereDrop(QueryDrop query)
+        public WhereDrop(ContentQueryDrop query)
         {
             _query = query;
         }
@@ -151,9 +151,9 @@ namespace Orchard.Liquid.Drops
 
     public class TakeDrop : Drop, IIndexable
     {
-        private QueryDrop _query;
+        private ContentQueryDrop _query;
 
-        public TakeDrop(QueryDrop query)
+        public TakeDrop(ContentQueryDrop query)
         {
             _query = query;
         }
@@ -175,9 +175,9 @@ namespace Orchard.Liquid.Drops
 
     public class SkipDrop : Drop, IIndexable
     {
-        private QueryDrop _query;
+        private ContentQueryDrop _query;
 
-        public SkipDrop(QueryDrop query)
+        public SkipDrop(ContentQueryDrop query)
         {
             _query = query;
         }

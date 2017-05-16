@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using DotLiquid;
 using Orchard.ContentManagement;
 using Newtonsoft.Json.Linq;
@@ -16,6 +16,7 @@ namespace Orchard.Liquid.Drops
 
         public int Id => _contentItem.Id;
         public string ContentItemId => _contentItem.ContentItemId;
+        public string ContentItemVersionId => _contentItem.ContentItemVersionId;
         public int Number => _contentItem.Number;
         public string Owner => _contentItem.Owner;
         public string Author => _contentItem.Author;
