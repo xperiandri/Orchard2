@@ -16,7 +16,7 @@ namespace Orchard.Liquid.Drops
         {
             _contentManager = contentManager;
             _session = session;
-            Query = _session.QueryAsync<ContentItem, ContentItemIndex>().Where(x => x.Published);
+            Query = _session.Query<ContentItem, ContentItemIndex>().Where(x => x.Published);
         }
 
         public ContentTypeDrop ContentType => new ContentTypeDrop(this);
@@ -32,7 +32,7 @@ namespace Orchard.Liquid.Drops
         {
             get
             {
-                var result = Query.List().GetAwaiter().GetResult().ToList();
+                var result = Query.ListAsync().GetAwaiter().GetResult().ToList();
                 return result;
             }
         }
