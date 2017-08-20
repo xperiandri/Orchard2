@@ -28,6 +28,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="$(AspNetCoreVersion)" />
+    <PackageReference Include="Microsoft.AspNetCore.AzureAppServicesIntegration" Version="2.0.0" />
+    <PackageReference Include="WindowsAzure.Storage" Version="8.2.0" />
   </ItemGroup>
 
 </Project>

@@ -44,6 +44,7 @@ namespace Orchard.Cms.Web
                     logging.AddNLogWeb(hostingContext.HostingEnvironment);
                 })
                 .UseStartup<Startup>()
+                .UseAzureAppServices()
                 .UseApplicationInsights()
                 .Build();
 
